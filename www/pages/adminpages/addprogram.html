@@ -1,0 +1,47 @@
+<ion-view view-title="Parent Monitoring System">
+ 
+  <ion-nav-bar class="bar-positive" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+  
+    </ion-nav-bar>
+  <ion-content class="padding"   >
+  
+     
+  
+<form method="POST" name="myForm" ng-controller="programcontroller">
+                   
+                      <div class="item item-divider" style="background-color:#2A375C;color:white;margin-top:30px">Add new Program</div>
+                
+                    
+                      <label class="item item-input item-stacked-label">
+                        <span class="input-label">Program name</span>
+                        <input type="text" name="ProgramName"  placeholder="Enter Course Name" ng-model="data.program" required>
+                        
+                           <span style="color:red" class="error" ng-show="myForm.ProgramName.$error.required">
+            Required!
+               </span>
+                    </label>
+                   
+                     
+                    <input ng-click="addprogram()" class="button button-block button-positive" type="submit"  value="Add" name="loginsubmit" >                    
+                </form>
+                
+                
+                
+                
+                
+                
+                
+               
+        <button class="button button-full button-positive" ui-sref="adminhome.program">Back</button>
+      
+             
+                <ion-infinite-scroll
+                    on-infinite="loadMore()"
+                    distance="1%">
+                </ion-infinite-scroll>
+ 
+  </ion-content>
+</ion-view>

@@ -1,0 +1,139 @@
+<style type="text/css">
+    
+    
+#result {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+#result td, #result th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#result tr:nth-child(even){background-color: #f2f2f2;}
+
+#result tr:hover {background-color: #ddd;}
+    
+
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
+<div style="overflow-x:auto;">
+
+<ion-view view-title="Parent Monitoring System">
+  <ion-nav-bar class="bar-positive" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+ 
+  <ion-content id="test1" class="padding background " ng-controller="studentResult">
+  
+  
+     
+
+<table style="margin-top:50px">
+    <tr>
+        <td>
+            <label class="item item-input item-stacked-label">
+                        <span class="input-label">Name</span>
+                        <input type="text" name="StudentFirstname" disabled ng-repeat="x in found | limitTo : 1" value="{{x.std_fname}}">
+                    </label>
+        </td>
+    
+         <td>
+        <label class="item item-input item-stacked-label">
+                        <span class="input-label">Program</span>
+                        <input type="text" name="rollNumber" disabled
+
+                        ng-repeat="x in found | limitTo : 1" value={{x.std_prog}}>
+
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <label class="item item-input item-stacked-label">
+                        <span class="input-label">Batch</span>
+                        <input type="text" name="section" disabled
+
+                        ng-repeat="x in found | limitTo : 1" value={{x.std_batch}}>
+
+            </label>
+        </td>
+    
+ 
+        <td>
+        <label class="item item-input item-stacked-label">
+                        <span class="input-label">Semester</span>
+                        <input type="text" name="section" disabled
+                        ng-repeat="x in found | limitTo : 1" value={{x.std_semes}}>
+            </label>
+        </td>
+
+    </tr>
+</table>
+<hr>
+<!-- <button class="button button-outline button-positive">
+  Outlined Button
+</button> -->
+
+<div class="list card">
+
+  <div class="item item-avatar">
+    <h2><Strong>Course:</Strong></h2>
+     <h2 ng-repeat="x in found | limitTo : 1" >{{x.std_cn}}</h2> 
+    
+   
+  </div>
+
+</div>
+
+
+
+<table id="result">
+    <tr>
+        <th>
+       <strong>Tests</strong>
+    </th>
+      <th>
+       <strong>Tot Marks</strong>
+    </th>
+      <th>
+       <strong>Ob-Marks</strong>
+    </th>
+      <th>
+       <strong>Ob-Weightage</strong>
+    </th>
+      <th>
+       <strong>Tot-Weightage</strong>
+    </th>
+      <th>
+       <strong>Status</strong>
+    </th>
+    </tr>
+    <tr ng-repeat="x in found">
+        <td>{{x.test_n}}</td>
+        <td>{{x.test_tm}}</td>
+           
+        <td>{{x.test_obm}}</td>
+          <td>{{x.obweightage}}</td>
+                  <td>{{x.tweightage}}</td>
+        <td>{{x.test_s}}</td>
+    
+    </tr>
+</table>
+ <button style="margin-top:40px"class="button button-full button-positive" ng-click="studentResultBack()">
+      <i class="icon ion-android-arrow-back">  
+    </i></button>
+    
+      <ion-infinite-scroll
+                    on-infinite="loadMore()"
+                    distance="1%">
+                </ion-infinite-scroll>
+ 
+
+
+             
+ 
+  </ion-content>
+</ion-view>

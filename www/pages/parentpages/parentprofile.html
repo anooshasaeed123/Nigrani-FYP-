@@ -1,0 +1,83 @@
+<ion-view view-title="Profile">
+  <ion-content class="padding profilebackground" ng-controller="parentprofilecontroller"  >
+ 
+  
+    
+   <div class="card" >
+   
+    <div class="item item-divider" style="background-color:#2A375C;color:white;">
+     
+      <b>Profile Information</b>
+  </div>
+
+  
+    
+    <a class="item item-thumbnail-left" href="#">
+      <img src="img/avatar2.png">
+      <h2><b>{{profile.fname}} {{profile.lname}}</b></h2>
+          <p>{{profile.designation}}</p>
+     
+    </a>
+
+    
+    
+    <div class="list"  >
+
+  <div class="item item-divider" style="background-color:#2A375C;color:white;">
+      <b>Basic information</b>
+  </div>
+
+  <a class="item" href="#">
+  <i class="icon ion-person"> 
+      <b>First Name:</b>  {{profile.fname}}</i>
+  </a>
+  
+   <a class="item" href="#">
+    <i class="icon ion-person">
+        <b>Last Name:</b>  {{profile.lname}}</i>
+  </a>
+  
+    <a class="item" href="#">
+    
+    <i class="icon ion-email">  <b>Email:</b> {{profile.email}}</i>
+
+  </a>
+    <a class="item" href="#">
+    <i class="icon ion-home"> 
+        <b>Address:</b> {{profile.address}}</i>
+  </a>
+  <a class="item" href="#">
+  <i class="icon ion-iphone"> 
+      <b>Phone:</b> {{profile.phone}}</i>
+  </a>
+   
+
+ 
+
+</div>
+    
+    <div class="list"  >
+
+  <div class="item item-divider" style="background-color:#2A375C;color:white;">
+      <b>Children Enrolled</b>
+  </div>
+
+  <a class="item" href="#" ng-repeat="x in student">
+  <i class="icon ion-person"> 
+      <b>Name:</b>  {{x.fname}} {{x.lname}}</i>
+  </a>
+
+  
+ 
+   
+
+ 
+
+</div>
+</div>
+  
+    <p><a ui-sref="parentchangeprofilepassword">Change Password</a></p>
+   
+  </ion-content>
+</ion-view> 
+   

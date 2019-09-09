@@ -1,0 +1,86 @@
+<ion-view view-title="Test Creation">
+  <ion-content class="padding background" ng-controller="AddTest" >
+ 
+  
+  
+  <div class="list"  >
+    <label class="item item-input item-stacked-label">
+    <span class="input-label ">Date</span>
+    <input type="date" placeholder="quiz1" ng-model="testdate">
+ 
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label ">Test Name</span>
+    <input type="text" placeholder="quiz1" ng-model="testname">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Total marks</span>
+    <input type="numeric" placeholder="Total Marks" ng-model="marks">
+  </label>
+    <label class="item item-input item-stacked-label">
+    <span class="input-label">Weightage</span>
+    <input type="numeric" placeholder="Weightage" ng-model="weightage">
+  </label>
+  
+  
+  <label class = "item item-input item-select">
+   <div class = "input-label">
+     Program
+   </div>
+	
+   <select ng-model="program5" ng-change="program1()">
+      <option ng-repeat="x in programs">{{x}}</option>
+     </select>
+</label>
+
+ <label class = "item item-input item-select">
+   <div class = "input-label">
+      Batch
+   </div>
+	
+   <select ng-model="batch3" ng-change="semester()">
+      <option  ng-repeat="y in batch1">{{y.batch}}</option>
+      </select>
+</label>
+<label class = "item item-input item-select">
+   <div class = "input-label">
+      Semester
+   </div>
+	
+   <select ng-model="semester1" ng-change="getcourse()">
+      <option  ng-repeat="c in semester">{{c}}</option>
+     </select>
+</label>
+
+
+<label class = "item item-input item-select">
+   <div class = "input-label">
+      Course
+   </div>
+	
+   <select ng-model="selectedcourse" ng-change="section()">
+      <option ng-repeat="x in course">{{x}}</option>
+     
+      
+   </select>
+</label>
+<label class = "item item-input item-select">
+   <div class = "input-label">
+     section
+   </div>
+	
+   <select ng-model="section">
+      <option ng-repeat="x in s">{{x}}</option>
+     
+      
+   </select>
+</label>
+
+
+</div>
+  <button type="submit" ng-click="Addtest()" class="button button-full button-positive">
+  Create
+</button>
+
+  </ion-content>
+</ion-view> 

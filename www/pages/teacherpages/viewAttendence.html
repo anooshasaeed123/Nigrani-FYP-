@@ -1,0 +1,56 @@
+<ion-view view-title="Test Creation">
+  <ion-content class="padding background" ng-controller="viewAttendence">
+  
+  <style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style> 
+
+<div style="overflow-x:auto;">
+ 
+  <table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Roll-number</th>
+   <th>Status</th>
+     </tr>
+                <tr ng-repeat="x in attendance">
+      <td>{{x.fname}}</td>
+      <td>{{x.lname}}</td>
+      
+      <td>{{x.rollnumber}}</td>
+      <td> {{x.status}}</td>
+     
+     
+        
+ 
+         
+         
+ </tr>
+      
+
+         
+         
+
+   
+
+   
+   
+  
+    
+   
+
+  </table>
+   
+  </ion-content>
+</ion-view> 

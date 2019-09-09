@@ -1,0 +1,123 @@
+<ion-view view-title="Parent Monitoring System" ng-controller="editParentController">
+ <ion-nav-bar class="bar-positive" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+
+  <ion-content class="padding">
+   
+      
+    
+    
+    <style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style> 
+
+      <div style="overflow-x:auto;"></div>
+    
+    
+    <table style="width:100%;margin-top:10px" ng-repeat="x in profile">
+    
+        <div class="item item-divider" style="background-color:#2A375C;color:white;width:100%">Edit</div>
+  
+         <tr>
+    <th>CNIC:</th>
+    <td>{{x.cnic}}</td>
+     <td> 
+      
+  <input style="border: groove;"  size="2"type="text" name="cnic" value="" ng-model="data.cnic">
+   </td>
+    <td> <button type="submit" ng-click="updatecnic()" class="button button-small button-positive">
+          Update
+</button></td>
+  </tr>
+   <tr>
+    <th>First Name:</th>
+    <td>{{x.fname}}</td>
+     <td> 
+      
+  <input style="border: groove;"  size="2"type="text" name="FirstName" value="" ng-model="data.fname">
+   </td>
+    <td> <button type="submit" ng-click="updatefname(x)" class="button button-small button-positive">
+          Update
+</button></td>
+  </tr>
+     <tr>
+    <th>Last Name:</th>
+    <td>{{x.lname}}</td>
+     <td> 
+      
+  <input style="border: groove;"  size="2"type="text" name="LastName" value="" ng-model="data.lname">
+   </td>
+    <td> <button type="submit" ng-click="updatelname()" class="button button-small button-positive">
+          Update
+</button></td>
+  </tr>
+     <tr>
+    <th>Email:</th>
+    <td>{{x.email}}</td>
+    
+    
+     <td> 
+      <form name="myForm">
+  <input style="border: groove;"  size="2"type="email" name="input" value="" ng-model="data.email">
+         </form>
+    <span class="error" ng-show="myForm.input.$error.required">
+        Required!
+      </span><br/>
+         <span class="error" ng-show="myForm.input.$error.email">
+        Not valid email!</span>
+   </td>
+    <td> <button type="submit" ng-click="updateemail()" class="button button-small button-positive">
+          Update
+</button></td>
+  </tr>
+     
+     <tr>
+    <th>Address:</th>
+    <td>{{x.address}}</td>
+     <td> 
+      
+  <input style="border: groove;"  size="2"type="text" name="address" value="" ng-model="data.address">
+   </td>
+    <td> <button type="submit" ng-click="updateaddress()" class="button button-small button-positive">
+          Update
+</button></td>
+  </tr>
+  
+     <tr>
+    <th>Contact Number:</th>
+    <td>{{x.contactNo}}</td>
+     <td> 
+      
+  <input style="border: groove;"  size="2"type="text" name="phone" value="" ng-model="data.contact">
+   </td>
+    <td> <button type="submit" ng-click="updatecontact()" class="button button-small button-positive">
+          Update
+</button></td>
+  </tr>
+ 
+</table>
+
+        <button class="button button-full button-positive" ng-click="editParentBackButton()">Back from edit parent</button>
+     
+ 
+     
+                
+                
+
+
+               
+ 
+  </ion-content>
+</ion-view>

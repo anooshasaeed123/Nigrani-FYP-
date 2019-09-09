@@ -1,0 +1,138 @@
+<ion-view view-title="Parent Monitoring System">
+  <ion-nav-bar class="bar-positive" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+
+  <ion-content class="padding" ng-controller="editStudentController">
+   
+     
+     
+        <style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style> 
+
+      <div style="overflow-x:auto;"/>
+      <table style="width:100%;margin-top:10px" ng-repeat="x in profile">
+    
+        <div class="item item-divider" style="background-color:#2A375C;color:white;width:100%">Edit</div>
+    <form  method="POST" name="NicDetailsform">
+         <tr>
+    <th>CNIC:</th>
+    <td>{{x.cnic}}</td>
+     <td> 
+     
+      
+  <input style="border: groove;"  limit-to="10" required=""  name="customerNicNoforconfirmation" ng-pattern="/^\d{13}$/"   size="2" type="text" value="" ng-model="data.cnic">
+    <b ng-show="NicDetailsform.customerNicNoforconfirmation.$dirty && NicDetailsform.customerNicNoforconfirmation.$error.pattern" class="danger">Write your 13 digit cnic without any '-' </b>
+   </td>
+ 
+    <td> <button type="submit" ng-click="updatecnic()"class="button button-small button-positive">
+          Update
+</button>
+            
+            </td>
+           
+  </tr>
+    </form>
+   <tr>
+    <th>First Name:</th>
+    <td>{{x.fname}}</td>
+     <td> 
+      
+  <input style="border: groove;"  size="2"type="text" name="FirstName" value="" ng-model="data.fname">
+   </td>
+    <td> <button type="submit" ng-click="updatefname(x)" class="button button-small button-positive">
+          Update
+</button></td>
+  </tr>
+     <tr>
+    <th>Last Name:</th>
+    <td>{{x.lname}}</td>
+     <td> 
+      
+  <input style="border: groove;"  size="2"type="text" name="LastName" value="" ng-model="data.lname">
+   </td>
+    <td> <button type="submit" ng-click="updatelname()" class="button button-small button-positive">
+          Update
+</button></td>
+  </tr>
+     <tr>
+    <th>Email:</th>
+    <td>{{x.email}}</td>
+    
+    
+     <td> 
+      <form name="myForm">
+  <input style="border: groove;"  size="2"type="email" name="input" value="" ng-model="data.email">
+         </form>
+    <span class="error" ng-show="myForm.input.$error.required">
+        Required!
+      </span><br/>
+         <span class="error" ng-show="myForm.input.$error.email">
+        Not valid email!</span>
+   </td>
+    <td> <button type="submit" ng-click="updateemail()" class="button button-small button-positive">
+          Update
+</button></td>
+  </tr>
+     <tr>
+    <th>Gender:</th>
+    <td>{{x.gender}}</td>
+     <td> 
+      
+  <input style="border: groove;"  size="2"type="text" name="password" value="" ng-model="data.gender">
+   </td>
+    <td> <button type="submit" ng-click="updategender()" class="button button-small button-positive">
+          Update
+</button></td>
+  </tr>
+     <tr>
+    <th>Address:</th>
+    <td>{{x.address}}</td>
+     <td> 
+      
+  <input style="border: groove;"  size="2"type="text" name="address" value="" ng-model="data.address">
+   </td>
+    <td> <button type="submit" ng-click="updateaddress()" class="button button-small button-positive">
+          Update
+</button></td>
+  </tr>
+  
+     <tr>
+    <th>Date of Birth:</th>
+    <td>{{x.dob}}</td>
+     <td> 
+      
+   <ion-item class="item-input">
+                            <label class="item-input">
+                              <span class="input-label"></span>
+                              <input type="date" ng-model="data.dueDate"   >
+                                </label>
+                              </ion-item>
+                              
+                                  <h3>{{data.dueDate | date: "MM-dd-yyyy"}}</h3>
+   </td>
+    <td> <button type="submit" ng-click="updatedob()" class="button button-small button-positive">
+          Update
+</button></td>
+  </tr>
+ 
+</table>
+             
+             
+        <button class="button button-full button-positive" ng-click="editStudentBackButton()">Back From edit Student</button>
+      
+              
+  </ion-content>
+</ion-view>

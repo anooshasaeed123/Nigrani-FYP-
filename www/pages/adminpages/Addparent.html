@@ -1,0 +1,82 @@
+
+ <ion-view view-title="Parent Monitoring System">
+  <ion-nav-bar class="bar-positive" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+  
+    </ion-nav-bar>
+ 
+  <ion-content class="padding" ng-controller="addParentController">
+   
+   
+     
+    <form style="margin-top:10px" method="POST" enctype="multipart/form-data" name="myForm">
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Guardian ID</span>
+                        <input type="text" name="guardianid"  ng-keyup='checkgid()' placeholder="Guardian id" ng-model="data.guardianid">
+                        <div style="color:red" ng-class="addClass(unamestatus)" >{{ unamestatus }}</div>
+                    </label>
+                    
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">First Name</span>
+                        <input type="text" name="parentFirstname"  placeholder="enter First Name" ng-model="data.parentFirstname">
+                    </label>
+                      <label class="item item-input item-stacked-label">
+                        <span class="input-label">Last Name</span>
+                        <input type="text" name="parentLastname" placeholder="enter Last Name" ng-model="data.parentLastname">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Email</span>
+                        <input type="email" name="input" ng-keyup='checkemail()' ng-pattern="emailFormat" placeholder="abc@xyz.com" ng-model="data.parentEmail" required>
+                          
+                             <div style="color:red" ng-class="addClass(unamestatus)" >{{ unamestatus }}</div>
+                           
+      <span class="error" style="color:red" ng-show="myForm.input.$error.required">
+        Required!
+      </span><br/>
+         <span class="error" ng-show="myForm.input.$error.email">
+        Not valid email!</span>
+    
+                         
+                    </label>
+                      <label class="item item-input item-stacked-label">
+                        <span class="input-label">Password</span>
+                        <input type="password"  autocomplete="off" name="parentPassword" placeholder="enter Password" ng-model="data.parentPassword">
+                    </label>
+                     <label class="item item-input item-stacked-label">
+                        <span class="input-label">User Name</span>
+                        <input type="text" name="parentUsername" placeholder="enter Parent's User Name" ng-model="data.parentUsername">
+                     </label>
+                     <label class="item item-input item-stacked-label">
+                        <span class="input-label">CNIC</span>
+                        <input type="text" name="parentCNIC" placeholder="enter Parent's CNIC" ng-model="data.parentCNIC">
+                     </label>
+                     <label class="item item-input item-stacked-label">
+                        <span class="input-label">Address</span>
+                        <input type="text" name="parentAddress" placeholder="enter Parent's Permanent Address" ng-model="data.parentAddress">
+                     </label>
+                     <label class="item item-input item-stacked-label">
+                        <span class="input-label">Contact Number</span>
+                        <input type="text"   name="parentContactNumber" placeholder="enter Parent's Contact Number" ng-model="data.parentContactNumber">
+                     </label>
+          
+ 
+ 
+ 
+ 
+                    <input ng-click="addParentSubmit()" class="button button-block button-positive" type="submit"  value="ADD" name="loginsubmit" >                    
+                </form>
+                
+                <button ng-click="addParentBackButton()" class="button button-full button-positive">
+  <i class="ion-arrow-left-c"> Back</i>
+</button>
+          
+              
+                <ion-infinite-scroll
+                    on-infinite="loadMore()"
+                    distance="1%">
+                </ion-infinite-scroll>
+ 
+  </ion-content>
+</ion-view>

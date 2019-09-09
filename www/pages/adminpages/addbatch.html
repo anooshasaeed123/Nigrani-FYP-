@@ -1,0 +1,92 @@
+<ion-view view-title="Parent Monitoring System">
+ 
+  <ion-nav-bar class="bar-positive" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+  
+    </ion-nav-bar>
+  <ion-content class="padding" ng-controller="batchcontroller"  >
+  
+      <form method="POST" name="myForm1">
+                   
+                      <div class="item item-divider" style="background-color:#2A375C;color:white;">Assign batch</div>
+                   <label class="item item-input item-select">
+                     <div class="input-label">Program</div>
+                        <select ng-model="data.program1" ng-change="getbatch()" name="program" ng-options="x.prog_id as x.prog_name for x in allprogfound"  required > 
+                          <option></option>
+                        </select>
+                           
+                           <span style="color:red" class="error" ng-show="myForm.program.$error.required">
+            Required!
+               </span>
+                    </label>
+                        <label class="item item-input item-select">
+
+                     <div class="input-label">Batch</div>
+                        <select ng-model="data.batch1"  name="batch2" required > 
+                          <option ng-repeat="x in batch1">{{x.batch}}</option>
+                        </select>
+                           
+                           <span style="color:red" class="error" ng-show="myForm.batch.$error.required">
+            Required!
+               </span>
+                    </label>
+                    
+                  
+                    
+                     
+                    <input ng-click="assignbatch()" class="button button-block button-positive" type="submit"  value="Add" name="loginsubmit" >  
+                            <button class="button button-full button-positive" ui-sref="adminhome.program">Back</button>
+                  
+                </form>
+                
+  
+  
+  
+  
+  
+  
+  
+   
+    <form method="POST" name="myForm">
+                   
+                      <div class="item item-divider" style="background-color:#2A375C;color:white;margin-top:30px">Add new batch</div>
+                    <label class="item item-input item-select">
+
+                     <div class="input-label">Program</div>
+                        <select ng-model="data.program" ng-options="x.prog_id as x.prog_name for x in allprogfound"  > 
+                          <option></option>
+                        </select>
+                    </label>
+                    
+                      <label class="item item-input item-stacked-label">
+                        <span class="input-label">Batch Year</span>
+                        <input type="text" name="CourseName"  placeholder="Enter Course Name" ng-model="data.batchName" required>
+                        
+                           <span style="color:red" class="error" ng-show="myForm.CourseName.$error.required">
+            Required!
+               </span>
+                    </label>
+                   
+                     
+                    <input ng-click="addbatch()" class="button button-block button-positive" type="submit"  value="Add" name="loginsubmit" >                    
+                </form>
+                
+                
+                
+                
+                
+                
+                
+               
+        <button class="button button-full button-positive" ui-sref="adminhome.program">Back</button>
+      
+             
+                <ion-infinite-scroll
+                    on-infinite="loadMore()"
+                    distance="1%">
+                </ion-infinite-scroll>
+ 
+  </ion-content>
+</ion-view>

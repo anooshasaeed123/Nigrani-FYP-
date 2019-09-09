@@ -1,0 +1,23 @@
+
+
+
+
+<ion-view view-title="Parent Monitoring System" ng-controller="ShowStudents">
+  <ion-content class="padding background">
+  
+      
+  	<br/><br/><br/><br/><br/><br/>
+  	<div class="item item-divider" style="background-color:#2A375C;color:white;text-align:center">Select the child enrolled: </div>
+  	
+ <label class="item item-input item-select">
+
+                      <div class="input-label">Student</div>
+                        <select ng-model="data.studentid" ng-options="x.stdid as x.fname for x in found"> 
+                        	<option value=""></option>
+                        </select>
+    </label>
+<br/><br/><br/>
+   <input ng-click="goCourse()" class="button button-block button-positive" type="submit"  value="Go" name="goChallan" >                    
+   
+  </ion-content>
+</ion-view>

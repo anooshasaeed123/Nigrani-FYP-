@@ -1,0 +1,18 @@
+
+
+
+
+<ion-view view-title="Parent Monitoring System" ng-controller="ShowStudents">
+  <ion-content class="padding background">
+ <label class="item item-input item-select">
+                      <div class="input-label">Student</div>
+                        <select ng-model="data.studentid" ng-options="x.stdid as x.fname for x in found"> 
+                        	<option value="">Click Here </option>
+                        </select>
+    </label>
+
+     
+   <input ng-click="goChallan()" class="button button-block button-positive" type="submit"  value="Go" name="goChallan" >                    
+   
+  </ion-content>
+</ion-view>

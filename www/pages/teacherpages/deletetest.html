@@ -1,0 +1,24 @@
+<ion-view view-title="delete test" ng-controller="deletetestcontroller">
+  <ion-content class="padding background">
+  
+  <div class="card" ng-repeat="x in test">
+  <div class="item item-divider">
+      <b>Test name: </b>{{x.testname}}
+  </div>
+ 
+  <div class="item item-text-wrap" >
+      <b>Program:</b> {{x.program}}<br>
+      <b>Year:</b> {{x.batchyear}}<br>
+        <b>Semester:</b> {{x.semester}}<br>
+      <b>Course:</b> {{x.coursename}}<br>
+      <b>Section: </b> {{x.sectionname}}
+  </div>
+   
+  <button type="submit" ng-click="delete(x)" class="button button-full button-positive">
+delete test
+</button>
+</div>
+
+
+  </ion-content>
+</ion-view> 

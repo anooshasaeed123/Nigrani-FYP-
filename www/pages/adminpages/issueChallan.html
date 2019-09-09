@@ -1,0 +1,83 @@
+<ion-view view-title="Parent Monitoring System" >
+  <ion-content class="padding" ng-controller="issueChallanController">
+    <div class="list card">
+      <div class="item item-divider"></div>
+      <div class="item item-body">
+        <button class="button button-positive" ng-click="issueChallanBackButton()">
+      <i class="icon ion-android-arrow-back">  
+    </i></button>
+      </div>
+    </div>
+    <form method="POST">
+                      
+                     <label class="item item-input item-stacked-label">
+                        <span class="input-label">Registeration Fee</span>
+                        <input type="text" name="registerationFee" placeholder="enter Registeration Fee " ng-model="data.registerationFee">
+                     </label>
+                     <label class="item item-input item-stacked-label">
+                        <span class="input-label">Tuition Fee</span>
+                        <input type="text" name="tuitionFee" placeholder="enter Tuition Fee" ng-model="data.tuitionFee">
+                     </label>
+
+                      
+                   
+                      <label class="item item-input item-select">
+                        <span class="input-label">Date</span>
+                        <ion-list>
+                          <ion-item class="item-input">
+                            <label class="item-input">
+                              <span class="input-label">Date</span>
+                              <input type="date" ng-model="data.issueDate">
+                                </label>
+                              </ion-item>
+                            </ion-list>
+</label>
+                                  <!-- <h3>{{data.issueDate | issueDate: "MM-dd-yyyy"}}</h3> -->
+                     
+
+                       <label class="item item-input item-select">
+                        <span class="input-label">Till</span>
+                        <ion-list>
+                          <ion-item class="item-input">
+                            <label class="item-input">
+                              <span class="input-label">Date</span>
+                              <input type="date" ng-model="data.submissionDate">
+                                </label>
+                              </ion-item>
+                            </ion-list>
+
+                                  <!-- <h3>{{data.submissionDate | submissionDate: "MM-dd-yyyy"}}</h3> -->
+                      </label>
+
+                  
+                     
+                      
+
+                       
+                     
+                     <label class="item item-input item-stacked-label">
+                        <span class="input-label">Issued By </span>
+                        <input type="text" name="issuedBy" placeholder="enter Admin's Full Name "ng-model="data.issuedBy">
+                     </label>
+
+
+                     
+ 
+ 
+ 
+ 
+                    <input ng-click="issueChallanSubmit()" class="button button-block button-positive" type="submit"  value="Add" name="loginsubmit" >                    
+                </form>
+                <div class="card">
+                    <div class="item item-text-wrap">
+                    
+                        Response: <b ng-bind="found"></b>
+                    </div>
+                </div>
+                <ion-infinite-scroll
+                    on-infinite="loadMore()"
+                    distance="1%">
+                </ion-infinite-scroll>
+ 
+  </ion-content>
+</ion-view>

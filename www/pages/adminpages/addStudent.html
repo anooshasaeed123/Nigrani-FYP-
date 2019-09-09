@@ -1,0 +1,119 @@
+<ion-view view-title="Parent Monitoring System">
+  <ion-nav-bar class="bar-positive" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+  
+    </ion-nav-bar>
+  <ion-content class="padding" ng-controller="addStudentController">
+   
+   
+     
+   
+    <form method="POST"  name="NicDetailsform">
+                   
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Student's Cnic </span>
+                        <input type="text" name="customerNicNoforconfirmation"  required=""  placeholder="Enter Student's CNIC "ng-model="data.studentCinic"  ng-pattern="/^\d{13}$/" limit-to="10">
+                           <b ng-show="NicDetailsform.customerNicNoforconfirmation.$dirty && NicDetailsform.customerNicNoforconfirmation.$error.pattern" class="danger">Write your 13 digit cnic without any '-' </b>
+                     </label>
+                     
+                      <label class="item item-input item-stacked-label">
+                        <span class="input-label">Roll Number</span>
+                        <input type="text" name="studentRollNo" ng-keyup='checkrollnumber()' placeholder="Enter Student's roll No." ng-model="data.studentRollNo">
+                          <div style="color:red" ng-class="addClass(unamestatus)" >{{ unamestatus }}</div>
+                     </label>
+                      
+                     <label class="item item-input item-select">
+
+                      <div class="input-label">Program</div>
+                        <select ng-model="data.program" name="program" ng-change="getbatch()" ng-options="x for x in programs" required> 
+                         
+                          <option value=""></option>
+                        </select>
+                        
+                           <span style="color:red" class="error" ng-show="myForm.program.$error.required">
+            Required!
+               </span>
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">First Name</span>
+                        <input type="text" name="StudentFirstname"  placeholder="Enter First Name" ng-model="data.StudentFirstname">
+                    </label>
+                      <label class="item item-input item-stacked-label">
+                        <span class="input-label">Last Name</span>
+                        <input type="text" name="studentLastname" placeholder="Enter Last Name" ng-model="data.studentLastname">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Email</span>
+                        <input type="email"  name="input" ng-keyup='checkemail()'  placeholder="Enter Email" ng-model="data.studentEmail">
+                        
+                          <span class="error" ng-show="NicDetailsform.input.$error.email">
+        Not valid email!</span>
+                         <div style="color:red" ng-class="addClass(unamestatus)" >{{ unamestatus }}</div>
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">User name</span>
+                        <input type="text" name="studenUsername" placeholder="Enter user name" ng-model="data.studentUserName">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Password</span>
+                        <input type="text" name="studentPassword1" placeholder="Enter Password" ng-model="data.studentPassword1">
+                    </label>
+                     <label class="item item-input item-stacked-label">
+                        <span class="input-label">Repeat Password</span>
+                        <input type="text" name="studentPassword2" placeholder="Enter Password" ng-model="data.studentPassword2">
+                    </label>
+                      
+                       
+                     
+                     <label class="item item-input item-stacked-label">
+                        <span class="input-label">Address</span>
+                        <input type="text" name="studentAddress" placeholder="Enter Student's Permanent Address" ng-model="data.studentAddress">
+                     </label>
+                     
+                    <label class="item item-input item-select">
+                        <div class="input-label">Gender</div>
+                        <select ng-model="data.genderSelect">
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                        </select>
+                     </label>
+                      <label class="item item-input item-select">
+                        <span class="input-label">DOB</span>
+                        <ion-list>
+                          <ion-item class="item-input">
+                            <label class="item-input">
+                              <span class="input-label"></span>
+                              <input type="date" ng-model="data.dueDate">
+                                </label>
+                              </ion-item>
+                            </ion-list>
+
+                                  <h3>{{data.dueDate | date: "MM-dd-yyyy"}}</h3>
+                      </label>
+
+
+                       
+                     <label class="item item-input item-stacked-label">
+                        <span class="input-label">Guardian No</span>
+                        <input type="text" name="parentID" placeholder="Enter Guardian NO "ng-model="data.GuardianID">
+                     </label>
+ 
+ 
+ 
+ 
+                    <input ng-click="addStudentSubmit()" class="button button-block button-positive" type="submit"  value="Add" name="loginsubmit" >                    
+                </form>
+               
+        <button class="button button-full button-positive" ng-click="addStudentBackButton()">
+      <i class="icon ion-android-arrow-back">  
+    </i></button>
+     
+                <ion-infinite-scroll
+                    on-infinite="loadMore()"
+                    distance="1%">
+                </ion-infinite-scroll>
+ 
+  </ion-content>
+</ion-view>

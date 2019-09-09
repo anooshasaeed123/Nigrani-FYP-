@@ -1,0 +1,28 @@
+<ion-view view-title="Parent Monitoring System">
+ 
+  <ion-nav-bar class="bar-positive" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+  
+    </ion-nav-bar>
+  <ion-content class="padding" ng-controller="deleteCourseController">
+      <div class="item item-divider" style="background-color:#2A375C;color:white; margin-top:90px">Select course to Delete</div>
+  
+    <form style="margin-top:10px">
+                 
+                  <label class="item item-input item-select">
+
+                      <div class="input-label">course</div>
+                        <select ng-model="data.course" ng-options="x.course_id as x.course_name for x in allcoursefound"> 
+                          <option value=""></option>
+                        </select>
+                    </label>
+                    <input ng-click="Deletesubmit()" class="button button-block button-positive" type="submit"  value="delete" name="Deletesubmit">                    
+                </form>
+                 
+        <button class="button button-full button-positive" ng-click="DeleteCourseBackButton()">Back</button>
+     
+ 
+  </ion-content>
+</ion-view>

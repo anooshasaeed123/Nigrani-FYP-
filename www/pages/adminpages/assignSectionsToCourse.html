@@ -1,0 +1,92 @@
+<ion-view view-title="Parent Monitoring System">
+  <ion-nav-bar class="bar-positive" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+  
+    </ion-nav-bar>
+  <ion-content class="padding" ng-controller="assignSectionsToCourseController">
+    
+    <form method="POST" name="myForm">
+                        
+                      <label class="item item-input item-select">
+
+                      <div class="input-label">course</div>
+                        <select ng-model="data.course" name="course" ng-options="x.course_id as x.course_name for x in allcoursefound" required> 
+                          <option value=""></option>
+                        </select>
+                        
+                 <span style="color:red" class="error" ng-show="myForm.course.$error.required">
+            Required!
+               </span>
+                    </label>
+
+                 
+                     <label class="item item-input item-select">
+
+                      <div class="input-label">Program</div>
+                        <select ng-model="data.program" name="program" ng-change="getbatch()" ng-options="x.prog_id as x.prog_name for x in allprogfound" required> 
+                         
+                          <option value=""></option>
+                        </select>
+                        
+                           <span style="color:red" class="error" ng-show="myForm.program.$error.required">
+            Required!
+               </span>
+                    </label>
+                    <label class="item item-input item-select">
+                     <div class="input-label">Batch</div>
+                        <select ng-model="data.batch" name="batch" ng-change="getsemester()" ng-options="x.batch_id as x.batch_year for x in allbatchfound" required> 
+                          <option value=""></option>
+                        </select>
+                           <span style="color:red" class="error" ng-show="myForm.batch.$error.required">
+            Required!
+               </span>
+                    </label>
+                    
+                     <label class="item item-input item-select">
+                     <div class="input-label">Semester</div>
+                        <select ng-model="data.Semester"  ng-change="getsection() "name="semester" ng-options="x.semestre_id as x.semester_name for x in allsemfound" required> 
+                          <option value=""></option>
+                        </select>
+                           <span style="color:red" class="error" ng-show="myForm.semester.$error.required">
+            Required!
+               </span>
+                    </label>
+                    
+                    
+                    <label class="item item-input ">
+                     <div class="input-label">Section</div>
+                     
+               
+                    </label>
+                    
+                <ul class = "list">
+   <li class = "item item-checkbox" ng-repeat="x in section">
+     {{x.name}}
+      <label class = "checkbox">
+         <input type = "checkbox" ng-model="y.name" ng-checked="{{x.name}}" ng-value="{{x.name}}" ng-click="addsection(x)" />
+      </label>
+   </li>
+        </ul>
+                       
+                      
+                       
+              
+                        
+                          
+              
+
+             
+                    <input ng-click="addCourseSubmit(x)" class="button button-block button-positive" type="submit"  value="Add" name="loginsubmit" >                    
+                </form>
+              
+        <button class="button button-full button-positive" ng-click="assignSectionsToCourseBackButton()">Back</button>
+      
+                <ion-infinite-scroll
+                    on-infinite="loadMore()"
+                    distance="1%">
+                </ion-infinite-scroll>
+ 
+  </ion-content>
+</ion-view>

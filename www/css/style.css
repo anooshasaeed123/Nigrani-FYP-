@@ -1,0 +1,76 @@
+/* Empty. Add your own CSS if you like */
+ion-view{
+	/*background: url(../img/backgroundImage.jpg);*/
+	 background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 80%;
+    height: 246px;
+    margin: auto;
+    z-index: 2;
+    position: relative;
+}
+
+
+.dark {
+  background-color: #7F8187 !important;
+  color: #ffffff;
+}
+
+.dark .item {
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid;
+  border-bottom: 2px solid;
+  border-color: #333333;
+  color: #F0F1F1;
+}
+
+.dark .item:last-child {
+  border-bottom: 1px solid #333333;
+}
+
+.dark .item-complex .item-content, .dark .item-radio .item-content {
+  background-color: transparent;
+}
+
+.dark h2,
+.dark h3,
+.dark p,
+.dark a {
+  color: #F0F1F1;
+}
+
+.profilebackground{
+     background-color: #FBFAF5 !important;
+    
+    
+}
+
+.profilebackground .item{
+     background-color: #FBFAF5;
+
+  
+  
+    
+    
+}
+.background{
+    
+      background-color: #FBFAF5;
+  
+    
+}
+
+.teachertest{
+    
+      background-color: #FBFAF5;
+   
+    
+}
+.page1 .item{
+    
+      background-color: #FBFAF5;
+   
+    
+}

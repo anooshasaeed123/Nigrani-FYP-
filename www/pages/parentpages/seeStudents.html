@@ -1,0 +1,32 @@
+<ion-view view-title="Parent Monitoring System">
+  <ion-content class="padding background" ng-controller="getstudentlocation">
+ 
+    
+      <div class="card">
+   <div class="item item-divider" style="background-color:#2A375C;color:white;text-align:center">
+ Courses
+  </div>
+  
+    <div class="list" ng-repeat="x in found">
+
+  <div class="item item-button-right">
+  {{x.fname}} 
+   {{x.lname}}
+    <button type="button" ng-click="view(x)"class="button button-positive">
+      <i class="icon ion-eye"> view Location</i>
+    </button>
+  </div>
+
+
+
+</div>
+  <div class="item item-divider" style="background-color:#2A375C;color:white;">
+
+  </div>
+</div>
+ 
+ 
+ 
+ 
+  </ion-content>
+</ion-view>

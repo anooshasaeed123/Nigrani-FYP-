@@ -1,0 +1,63 @@
+<ion-view view-title="Parent Monitoring System">
+ 
+  <ion-nav-bar class="bar-positive" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+  
+    </ion-nav-bar>
+  <ion-content class="padding" ng-controller="semestercontroller"  >
+   
+    <form method="POST" name="myForm">
+                    <label class="item item-input item-select">
+
+                     <div class="input-label">Program</div>
+                        <select ng-model="data.program" ng-change="getbatch()" name="program" ng-options="x.prog_id as x.prog_name for x in allprogfound"  required > 
+                          <option></option>
+                        </select>
+                           
+                           <span style="color:red" class="error" ng-show="myForm.program.$error.required">
+            Required!
+               </span>
+                    </label>
+                        <label class="item item-input item-select">
+
+                     <div class="input-label">Batch</div>
+                        <select ng-model="data.batch" ng-change=getsemester() name="batch" ng-options="x.batch_id as x.batch_year for x in batch" required > 
+                          <option></option>
+                        </select>
+                           
+                           <span style="color:red" class="error" ng-show="myForm.batch.$error.required">
+            Required!
+               </span>
+                    </label>
+                    
+                      <label class="item item-input item-select">
+
+                     <div class="input-label">Assign Semester</div>
+                        <select ng-model="data.semester" ng-change=getsemester() name="Semester" ng-options="x for x in allsemfound"  required> 
+                          <option></option>
+                        </select>
+                           
+                           <span style="color:red" class="error" ng-show="myForm.Semester.$error.required">
+            Required!
+               </span>
+                    </label>
+                    
+                   
+                   
+                     
+                    <input ng-click="assignsemester()" class="button button-block button-positive" type="submit"  value="Add" name="loginsubmit" >                    
+                </form>
+                
+               
+        <button class="button button-full button-positive" ui-sref="adminhome.program">Back</button>
+      
+             
+                <ion-infinite-scroll
+                    on-infinite="loadMore()"
+                    distance="1%">
+                </ion-infinite-scroll>
+ 
+  </ion-content>
+</ion-view>

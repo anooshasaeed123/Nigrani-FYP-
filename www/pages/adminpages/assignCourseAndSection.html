@@ -1,0 +1,70 @@
+<ion-view view-title="Parent Monitoring System">
+  <ion-nav-bar class="bar-positive" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+  
+    </ion-nav-bar>
+  <ion-content class="padding" ng-controller="assignCourseAndSectionController">
+ 
+    <form method="POST">
+
+
+        <label class="item item-input item-select">
+
+                      <div class="input-label">Teacher</div>
+                        <select ng-model="data.teacher" ng-change="getteacher()" ng-options="x.teacher_id as x.teacher_name for x in allteacherfound"> 
+                          <option value=""></option>
+                        </select>
+          </label>
+
+    
+                       <label class="item item-input item-select">
+
+                     <div class="input-label">Program</div>
+                        <select ng-model="data.program" ng-change="getbatch(x)"> 
+                          <option ng-repeat="x in programs">{{x}}</option>
+                        </select>
+                    </label>
+                     <label class="item item-input item-select">
+
+                     <div class="input-label">batch</div>
+                        <select ng-model="data.batch" ng-change="getsemester()"> 
+                          <option ng-repeat="x in allbatchfound">{{x.batch_year}}</option>
+                        </select>
+                    </label>
+                    
+                      <label class="item item-input item-select">
+
+                     <div class="input-label">semester</div>
+                        <select ng-model="data.semester" ng-change="getcourse()"> 
+                          <option ng-repeat="x in allsemfound">{{x.semester_name}}</option>
+                        </select>
+                    </label>
+                    
+                     <label class="item item-input item-select">
+
+                     <div class="input-label">Course-Section</div>
+                        <select ng-change="savecourse()" ng-model="data.course" ng-options="x.courseid as x.course_name + '-'+x.section_name for x in course"> 
+                          <option value=""></option>
+                        </select>
+                        
+                    </label>
+                     
+
+              
+                 
+                    
+                     
+                    <input ng-click="assignSubmit()" class="button button-block button-positive" type="submit"  value="Add" name="loginsubmit" >                    
+                </form>
+                 
+        <button class="button button-full button-positive" ng-click="assignCourseAndSectionBackButton()">Back</button>
+     
+                <ion-infinite-scroll
+                    on-infinite="loadMore()"
+                    distance="1%">
+                </ion-infinite-scroll>
+ 
+  </ion-content>
+</ion-view>

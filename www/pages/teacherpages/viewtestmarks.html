@@ -1,0 +1,63 @@
+<ion-view view-title="Marks management">
+  <ion-content class="padding background" ng-controller="viewmarkscontroller">
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style> 
+
+<div style="overflow-x:auto;">
+  <table>
+    <tr>
+      <th>Name</th>
+      
+      <th>Roll-number</th>
+      <th>Obt-Marks</th>
+      <th>Total Marks</th>
+       <th>Ob-Weightage</th>
+        <th>Total Weightage</th>
+      
+       <th>Status</th>
+     </tr>
+                <tr ng-repeat="x in test">
+      <td>{{x.fname}} {{x.lname}}</td>
+     
+      
+      <td>{{x.rollnumber}}</td>
+      <td> {{x.obmarks}}</td>
+     <td>{{x.totmarks}}</td>
+      <td>{{x.weightage}}</td>
+      <td>{{x.tweightage}}</td>
+       <td>{{x.status}}</td>
+     
+        
+ 
+         
+         
+ </tr>
+      
+
+         
+         
+
+   
+
+   
+   
+  
+    
+   
+
+  </table>
+</div>
+
+  </ion-content>
+</ion-view> 

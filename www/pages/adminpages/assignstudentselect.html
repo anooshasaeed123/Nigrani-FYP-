@@ -1,0 +1,20 @@
+<ion-view view-title="Parent Monitoring System">
+  <ion-content class="padding " ng-controller="assigncoursestostudents">
+  
+    <form style="margin-top:90px">
+        <div class="item item-divider" style="background-color:#2A375C;color:white;">Edit Parent</div>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Enter Roll# of student you want to assign courses.</span>
+                        <input type="text"  placeholder="Roll Number" ng-model="data.rollnumber">
+                    </label>
+                      
+ 
+                    <input ng-click="assign()" class="button button-block button-positive" type="submit"  value="Assign" name="Deletesubmit">                    
+                </form>
+                  
+        <button class="button button-block button-positive" ng-click="BackButton()">Back</button>
+
+            
+ 
+  </ion-content>
+</ion-view>

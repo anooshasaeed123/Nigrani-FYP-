@@ -1,0 +1,27 @@
+<ion-view view-title="Parent Monitoring System">
+   <ion-nav-bar class="bar-positive" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+  
+    </ion-nav-bar>
+  <ion-content class="padding " ng-controller="deleteParentctrl">
+  
+    <div  class="item item-divider" style="background-color:#2A375C;color:white;margin-top:70px;">Delete Parent</div>
+   
+    <form>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Enter Guardian ID you want to delete</span>
+                        <input type="text" name="CNIC"  placeholder="Enter Guardian ID" ng-model="data.id">
+                    </label>
+                      
+ 
+                    <input ng-click="Deletesubmit()" class="button button-block button-positive" type="submit"  value="delete" name="Deletesubmit">                    
+                </form>
+                
+               
+        <button class="button  button-full button-positive" ng-click="DeleteParentBackButton()">Back</button>
+    
+ 
+  </ion-content>
+</ion-view>

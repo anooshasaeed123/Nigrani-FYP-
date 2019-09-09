@@ -1,0 +1,21 @@
+
+<ion-view view-title="Parent Monitoring System" ng-controller="studentController">
+  <ion-content class="padding">
+   <button ng-click="addStudent()" id="addbutton" class="button button-full button-positive">
+   	<i class="icon ion-android-add"> 
+  Add Student </i>
+</button>
+<button ng-click="editStudent()" class="button button-full button-positive">
+  <i class="icon ion-android-create"> Edit Student></i>
+</button>
+<!--
+<button ng-click="deleteStudent()" class="button button-full button-positive">
+  <i class="icon ion-android-delete">Remove Student</i>
+</button>
+-->
+ 
+ <button ui-sref="selectassignstudent" class="button button-full button-positive">
+  <i class="icon ion-android-delete">Assign course and Section</i>
+</button>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,25 @@
+<ion-view view-title="Parent Monitoring System">
+  <ion-nav-bar class="bar-positive" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+ 
+  <ion-content class="padding " ng-controller="teaacherController">
+  
+    <form style="margin-top:90px">
+        <div class="item item-divider" style="background-color:#2A375C;color:white;">Edit Parent</div>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Enter Employee ID you want to edit</span>
+                        <input type="text"  placeholder="Employee Number" ng-model="data.eid">
+                    </label>
+                      
+ 
+                    <input ng-click="editTeacherselect()" class="button button-block button-positive" type="submit"  value="Edit" name="Deletesubmit">                    
+                </form>
+                  
+        <button class="button button-block button-positive" ng-click="BackButton()">Back</button>
+
+               
+ 
+  </ion-content>
+</ion-view>

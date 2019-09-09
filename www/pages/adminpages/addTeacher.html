@@ -1,0 +1,89 @@
+<ion-view view-title="Parent Monitoring System">
+ <ion-nav-bar class="bar-positive" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+  
+    </ion-nav-bar>
+  <ion-content class="padding" ng-controller="addTeacherController">
+   
+    <form method="POST" name="NicDetailsform">
+                       <label class="item item-input item-stacked-label">
+                        <span class="input-label">Employee ID</span>
+                        <input type="text" name="teacherName" ng-keyup='checkid()' placeholder="enter First Name" ng-model="data.id">
+                         <div style="color:red" ng-class="addClass(unamestatus)" >{{ unamestatus }}</div>
+                         </label>
+                     <label class="item item-input item-stacked-label">
+                        <span class="input-label">Teacher's Cnic No</span>
+                        <input type="text" name="customerNicNoforconfirmation"  required=""  placeholder="enter teachers's CNIC "ng-model="data.teacherCnic" ng-pattern="/^\d{13}$/" limit-to="10">
+                        
+                        <b ng-show="NicDetailsform.customerNicNoforconfirmation.$dirty && NicDetailsform.customerNicNoforconfirmation.$error.pattern" class="danger">Write your 13 digit cnic without any '-' </b>
+                     </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">First name</span>
+                        <input type="text" name="teacherName"  placeholder="enter First Name" ng-model="data.teacherfName">
+                    </label>
+                      <label class="item item-input item-stacked-label">
+                        <span class="input-label">Last name</span>
+                        <input type="text" name="teacherlName"  placeholder="enter Last Name" ng-model="data.teacherlName">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Designation</span>
+                        <input type="text" name="teacherdes"  placeholder="enter Designation" ng-model="data.teacherDesignation">
+                    </label>
+                    
+                     <label class="item item-input item-stacked-label">
+                        <span class="input-label">Qualification</span>
+                        <input type="text" name="teacherqual"  placeholder="Enter Qualification" ng-model="data.qualification">
+                    </label>
+                    
+                      
+                     
+                     <label class="item item-input item-stacked-label">
+                        <span class="input-label">Address</span>
+                        <input type="text" name="teacherAddress" placeholder="enter  Permanent Address" ng-model="data.teacherAddress">
+                     </label>
+                     
+
+                       
+                     <label class="item item-input item-stacked-label">
+                        <span class="input-label">Email address</span>
+                        <input type="email" name="input" ng-keyup='checkemail()' placeholder="enter Email address "ng-model="data.TeacherEmail">
+                        
+                         <span class="error" ng-show="NicDetailsform.input.$error.email">
+        Not valid email!</span>
+                         <div style="color:red" ng-class="addClass(unamestatus)" >{{ unamestatus }}</div>
+                     </label>
+                      <label class="item item-input item-stacked-label">
+                        <span class="input-label">Username</span>
+                        <input type="text" name="teacherEmailAddress" placeholder="enter Email address "ng-model="data.Teacherusername">
+                     </label>
+                     <label class="item item-input item-stacked-label">
+                        <span class="input-label">Password</span>
+                        <input type="text" name="Password" placeholder="enter Password "ng-model="data.password1">
+                     </label>
+                       <label class="item item-input item-stacked-label">
+                        <span class="input-label">Repeat Password</span>
+                        <input type="text" name="Password" placeholder="enter Password "ng-model="data.password2">
+                     </label>
+                     <label class="item item-input item-stacked-label">
+                        <span class="input-label">Enter phone Number</span>
+                        <input type="text" name="phoneNumber" placeholder="enter phone number "ng-model="data.phone">
+                     </label>
+ 
+ 
+ 
+ 
+                    <input ng-click="addTeacherSubmit()" class="button button-block button-positive" type="submit"  value="Add" name="loginsubmit" >                    
+                </form>
+                 
+        <button class="button button-full button-positive" ng-click="addTeachertBackButton()">Back</button>
+    
+               
+                <ion-infinite-scroll
+                    on-infinite="loadMore()"
+                    distance="1%">
+                </ion-infinite-scroll>
+ 
+  </ion-content>
+</ion-view>

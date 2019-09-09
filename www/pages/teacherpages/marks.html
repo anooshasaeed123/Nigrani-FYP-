@@ -1,0 +1,39 @@
+<ion-view view-title="Marks management">
+  <ion-content class="padding background" ng-controller="markscontroller">
+
+ <div class="card" ng-repeat="x in test">
+ 
+  <div class="item item-divider " >
+      <b>Test Date: </b>{{x.date}}
+  </div>
+ 
+  <div class="item item-text-wrap " >
+      <b>Test name:</b> {{x.testname}}<br>
+      <b>Program:</b> {{x.program}}<br>
+      <b>Year:</b> {{x.batchyear}}<br>
+        <b>Semester:</b> {{x.semester}}<br>
+      <b>Course:</b> {{x.coursename}}<br>
+      <b>Section: </b> {{x.sectionname}}
+  </div>
+   
+  
+
+
+<div class="row">
+  <div class="col">
+       <button type="submit" ng-click="viewmarks(x)" class="button button-full button-positive">
+           <i class="ion-eye"> View</i>
+</button>
+  </div>
+  <div class="col">
+     <button type="submit" ng-click="marks(x)" class="button button-full button-positive">
+         <i class="ion-compose"> Update</i>
+</button>
+     
+  </div>
+ 
+</div>
+</div>
+
+  </ion-content>
+</ion-view> 

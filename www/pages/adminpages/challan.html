@@ -1,0 +1,27 @@
+
+<ion-view view-title="Parent Monitoring System" ng-controller="challanController">
+  <ion-content class="padding">
+                    <label class="item item-input item-select">
+
+                     <div class="input-label">Program</div>
+                        <select ng-model="data.program" ng-options="x.prog_id as x.prog_name for x in allprogfound"> 
+                          <option value=""></option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select">
+                     <div class="input-label">Batch</div>
+                        <select ng-model="data.batch" ng-options="x.batch_id as x.batch_year for x in allbatchfound"> 
+                          <option value=""></option>
+                        </select>
+                    </label>
+                     <label class="item item-input item-select">
+                     <div class="input-label">Semester</div>
+                        <select ng-model="data.yesSemester" ng-options="x.semestre_id as x.semester_name for x in allsemfound"> 
+                          <option value=""></option>
+                        </select>
+                    </label>
+                    <input ng-click="issue()" class="button button-block button-positive" type="submit"  value="Go" name="loginsubmit" >  
+
+
+  </ion-content>
+</ion-view>

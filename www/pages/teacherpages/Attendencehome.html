@@ -1,0 +1,37 @@
+<ion-view view-title="Attendence management">
+  <ion-content class="padding background" ng-controller="Attendencecontroller">
+<form >
+<div class="card" ng-repeat="x in attendence1">
+  <div class="item item-divider" >
+    Batch Year: {{x.batchyear}}
+<!--    <input ng-model="x.batch" value="{{x.batch}}"/>-->
+
+  </div>
+  <div class="item item-text-wrap" >
+    <b>Program: </b> {{x.program}}<br>
+      <b>course: </b> {{x.coursename}}<br>
+       <b>semester: </b> {{x.semester}}<br>
+      <b>Section: </b> {{x.sectionname}}<br>
+  </div>
+<!--  <input ng-model="x.section" value="{{x.section}}"/>-->
+
+ 
+
+<div class="row">
+  <div class="col">
+     <button type="submit" ng-click="attendence3(x)" class="button button-full button-positive">Make</button>
+  </div>
+  <div class="col">
+      <button type="submit"  ng-click="view(x)"  class="button button-full button-positive">View </button>
+  </div>
+  
+</div>
+
+
+
+</div>
+     
+     
+      </form>
+  </ion-content>
+</ion-view> 

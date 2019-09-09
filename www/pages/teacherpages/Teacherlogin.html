@@ -1,0 +1,44 @@
+<ion-view view-title="Login">
+
+  <ion-content class="padding" ng-controller="Teacherlogin">
+     <style>
+         #tlogin{
+             
+             
+             padding-top: 70px;
+         }
+      
+      
+      
+      </style>
+      <ion-nav-bar class="bar-positive" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+    </ion-nav-bar>
+     <form id="tlogin">
+         <center><img style="height:120px;margin-bottom:20px" src="img/logo.jpg"></center>
+     <div class="item item-divider" style="background-color:#2A375C;color:white;text-align:center">Teacher Login</div>
+    <div class="list">
+  <label class="item item-input item-stacked-label">
+      <span class="input-label"><i class="ion-person">Email</i></span>
+    <input type="text" placeholder="John"  ng-model="temail">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label"><i class="ion-compose"></i> Password</span>
+    <input type="password" placeholder="******" ng-model="tpassword">
+  </label>
+<button type="submit" ng-click="Teacherlogin()" class="button button-full button-positive">
+  Login
+</button>
+<button type="submit" ng-click="Forgot()" class="button button-full button-positive">
+ Forgot password?
+</button>
+</div>
+      </form>
+ 
+
+              
+ 
+  </ion-content>
+</ion-view>

@@ -1,0 +1,21 @@
+<ion-view view-title="Parent Monitoring System">
+  <ion-content class="padding background" ng-controller="retrievedate">
+
+    
+    <div class="list" ng-repeat="x in date track by $index">
+
+  <div class="item item-button-right">
+    {{x}}
+    <button type="submit" ng-click="viewAtt(x)" class="button button-positive">
+    view
+    </button>
+  </div>
+
+  
+
+</div>
+    
+              
+ 
+  </ion-content>
+</ion-view>

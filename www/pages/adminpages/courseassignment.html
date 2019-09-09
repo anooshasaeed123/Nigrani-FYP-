@@ -1,0 +1,89 @@
+<ion-view view-title="Parent Monitoring System">
+  <ion-nav-bar class="bar-positive" >
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+  
+    </ion-nav-bar>
+  <ion-content class="padding" ng-controller="assigncourse">
+   
+   
+     
+
+    <div class="card">
+  <div class="item item-divider">
+ Student Information
+  </div>
+  <div class="item item-text-wrap" ng-repeat="x in student">
+   <a class="item item-thumbnail-left" href="#">
+      <img src="img/course.png">
+      <h2><b>Name: {{x.fname}} {{x.lname}}</b></h2>
+          <p>Roll Number: {{x.rollnumber}}</p>
+     
+    </a>
+  </div>
+ 
+</div>
+    <form method="POST">
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Roll number</span>
+                        <input type="text" name="StudentFirstname"  placeholder="Enter Roll number" ng-model="data.StudentFirstname">
+                    </label>
+                     
+                      
+                       <label class="item item-input item-select">
+
+                     <div class="input-label">Program</div>
+                        <select ng-model="data.program" ng-change="getbatch(x)"> 
+                          <option ng-repeat="x in programs">{{x}}</option>
+                        </select>
+                    </label>
+                      <label class="item item-input item-select">
+
+                     <div class="input-label">batch</div>
+                        <select ng-model="data.batch" ng-change="getsemester()"> 
+                          <option ng-repeat="x in allbatchfound">{{x.batch_year}}</option>
+                        </select>
+                    </label>
+                       <label class="item item-input item-select">
+
+                     <div class="input-label">semester</div>
+                        <select ng-model="data.semester" ng-change="getcourse()"> 
+                          <option ng-repeat="x in allsemfound">{{x.semester_name}}</option>
+                        </select>
+                    </label>
+                    
+                    <label class="item item-input item-select">
+
+                     <div class="input-label">Course-Section</div>
+                        <select ng-change="savecourse()" ng-model="data.course" ng-options="x.courseid as x.course_name + '-'+x.section_name for x in course"> 
+                          <option value=""></option>
+                        </select>
+                        
+                    </label>
+                     
+                  
+                                
+                                            
+ 
+                       
+               
+                     
+ 
+ 
+                    <input ng-click="assign()" class="button button-block button-positive" type="submit"  value="Add" name="loginsubmit" >                    
+                </form>
+                
+                   
+        <button class="button button-full button-positive" ui-sref="selectassignstudent">
+      <i class="icon ion-android-arrow-back">  
+    </i></button>
+     
+              
+                <ion-infinite-scroll
+                    on-infinite="loadMore()"
+                    distance="1%">
+                </ion-infinite-scroll>
+ 
+  </ion-content>
+</ion-view>
