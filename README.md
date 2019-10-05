@@ -1,5 +1,5 @@
 # Nigrani-FYP-
-# Introduction
+## Introduction
 This application will help to eliminate the usual cliché of information distribution. Visiting
 multiple booths at different places can be a hectic job for parents. In this way the parents
 can access all the information in a single swipe while sitting at home. Our goal is to assist
@@ -12,7 +12,7 @@ parent module and administration. It provide a platform to parents; they can get
 information of their children academia performances. They can communicate with teachers
 and faculty members. All course details, child performance, grades, will be available at one
 single platform.
-# Objective
+## Objective
 The goal of the project is to develop an application that should consist of latest
 technologies, efficient, fast, easy to interact with teachers and simple enough to use for the
 parents. Those parents who wants to look at children’s performance can easily look
